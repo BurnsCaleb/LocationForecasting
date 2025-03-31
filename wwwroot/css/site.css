@@ -1,0 +1,129 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+#map {
+    justify-self: center;
+    height: 60vh;
+    width: 90%;
+    margin: 5px;
+}
+
+#forecast {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.badge {
+    flex-shrink: 0;
+    display: inline-block;
+    text-align: center;
+    background: rgb(31,179,241);
+    background: linear-gradient(0deg, rgba(31,179,241,1) 15%, rgba(7,41,119,1) 100%);
+    width: 125px;
+    height: 78px;
+    margin: 3px;
+}
+
+.badge h3 {
+    font-size: 2em;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+#weather {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-self: center;
+    margin: 5px;
+    width: 80%;
+    height: auto;
+    border-radius: 5%;
+    background: rgb(31,179,241);
+    background: linear-gradient(180deg, rgba(31,179,241,1) 15%, rgba(7,41,119,1) 100%);
+}
+
+#dayTime,
+#nightTime {
+    flex-grow: 1;
+    padding: 5px;
+    color: azure;
+}
+
+#dayName {
+    text-align: center;
+    font-weight: 700;
+    font-size: 130%;
+}
+
+#temp {
+    text-align:center;
+    font-weight: 600;
+    font-size: 150%;
+}
+
+#details {
+    text-align:center;
+    padding: 3px;
+}
+
+@media (min-width: 768px) {
+    .badge{
+        font-size: 0.60em;
+    }
+}
+
+@media (min-width: 1280px){
+    #forecast {
+        justify-content:center;
+    }
+    #location {
+        margin-left: 7%;
+    }
+
+    #weather {
+        background: none;
+        flex-direction: row;
+        gap: 3px;
+    }
+    #dayTime,
+    #nightTime {
+        width: 48%;
+        background: rgb(31,179,241);
+        background: linear-gradient(180deg, rgba(31,179,241,1) 15%, rgba(7,41,119,1) 100%);
+    }
+}
+
+@media (min-width: 2000px) {
+    html{
+        font-size: 18px;
+    }
+    .badge{
+        width: 160px;
+    }
+}
