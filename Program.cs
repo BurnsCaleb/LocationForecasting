@@ -1,4 +1,5 @@
 using LocationForecasting.Data;
+using LocationForecasting.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace LocationForecasting

@@ -141,7 +141,7 @@ namespace LocationForecasting.Controllers
             try
             {
                 // Call LocationService.GetLocation to get City and State
-                LocationService.LocationData location = await _locationService.GetLocation(coords.Latitude, coords.Longitude);
+                LocationService.LocationData location = await _locationService.GetLocation(coords.Latitude, coords.Longitude, GetApiKey().Result);
 
                 return Json(location);
             }
@@ -169,6 +169,12 @@ namespace LocationForecasting.Controllers
                 Debug.WriteLine(e.Message);
                 return Json(new { error = "Unexpected Error. Please try again." });
             }
+        }
+
+        public async Task<string> GetApiKey()
+        {
+            var apiKey = await _context.KeyStorage.Select(k => k.Key).FirstOrDefaultAsync();
+            return apiKey;
         }
 
         public class Coordinates

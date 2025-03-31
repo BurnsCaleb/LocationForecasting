@@ -1,6 +1,9 @@
 ﻿// Contains all classes needed for retrieving location data
 
 using System.Diagnostics;
+using LocationForecasting.Controllers;
+using LocationForecasting.Data;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
 namespace LocationForecasting.Models
@@ -8,7 +11,6 @@ namespace LocationForecasting.Models
     public class LocationService
     {
         private const string ApiUrl = "https://maps.googleapis.com/maps/api/geocode/json";
-        private const string ApiKey = "AIzaSyBe6Tkx5dfp-oOsZsYHbdS-ITMSIzhEnxw";
 
         /// <summary>
         /// Communicates with Google Maps API to get location data
@@ -17,9 +19,10 @@ namespace LocationForecasting.Models
         /// <param name="longitude"></param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        public async Task<LocationData> GetLocation(double latitude, double longitude)
+        public async Task<LocationData> GetLocation(double latitude, double longitude, string apiKey)
         {
-            string url = $"{ApiUrl}?latlng={latitude},{longitude}&key={ApiKey}";
+
+            string url = $"{ApiUrl}?latlng={latitude},{longitude}&key={apiKey}";
 
             using (HttpClient client = new HttpClient())
             {

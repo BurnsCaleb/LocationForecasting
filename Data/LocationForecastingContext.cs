@@ -10,5 +10,6 @@ namespace LocationForecasting.Data
         public DbSet<RequestLog> RequestLogs { get; set; } 
         public DbSet<User> Users { get; set; }
         public DbSet<ExceptionLog> ExceptionLogs { get; set; }
+        public DbSet<KeyStorage> KeyStorage { get; set; }
     }
 }
