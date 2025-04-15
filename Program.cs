@@ -1,6 +1,6 @@
+
 using LocationForecasting.Data;
 using LocationForecasting.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace LocationForecasting
 {
@@ -12,7 +12,11 @@ namespace LocationForecasting
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<LocationForecastingContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
+            builder.Services.AddTransient<RequestData>();
+            builder.Services.AddTransient<ExceptionData>();
+            builder.Services.AddTransient<SettingsData>();
+            builder.Services.AddTransient<WeatherService>();
+            builder.Services.AddTransient<LocationService>();
 
             var app = builder.Build();
 

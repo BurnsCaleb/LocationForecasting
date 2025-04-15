@@ -1,9 +1,5 @@
 ﻿// Contains all classes needed for retrieving location data
 
-using System.Diagnostics;
-using LocationForecasting.Controllers;
-using LocationForecasting.Data;
-using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
 namespace LocationForecasting.Models

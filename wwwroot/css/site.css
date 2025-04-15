@@ -75,6 +75,11 @@ body {
     color: azure;
 }
 
+#icon {
+    display: flex;
+    justify-self: center;
+}
+
 #dayName {
     text-align: center;
     font-weight: 700;
@@ -102,7 +107,8 @@ body {
     #forecast {
         justify-content:center;
     }
-    #location {
+    #location,
+    #tooltip{
         margin-left: 7%;
     }
 

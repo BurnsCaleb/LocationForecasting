@@ -1,7 +1,7 @@
-﻿// This file is meant to handle changing, updating, and displaying
-// the location and forecast information on the DOM
+﻿// Display Information to the View
 
 
+// Update marker location
 function updateLocationInfo(city, state) {
     $("#location").html(
         `
@@ -10,6 +10,7 @@ function updateLocationInfo(city, state) {
     )
 }
 
+// Show program is working to get forecast
 function workingForecast() {
     $("#forecast").html(
         `
@@ -29,12 +30,12 @@ function updateForecastInfo(data) {
     if (data && data.length > 0) {
       
         // Filter to only show daytime
-        const dayTimeData = data.filter(item => item.isDayTime === true);
+        let dayTimeData = data.filter(item => item.isDayTime === true);
         // Filter to only show nighttime
-        const nightTimeData = data.filter(item => item.isDayTime === false);
+        let nightTimeData = data.filter(item => item.isDayTime === false);
 
         if (data[0].isDayTime === false) {
-            const updatedDayData = [];
+            let updatedDayData = [];
             // Add tonight to day list
             updatedDayData.push(data[0]);
 
@@ -63,7 +64,6 @@ function updateForecastInfo(data) {
                     </div>
                 `)
                 $(`#badge-${index}`).on("click", function () {
-                    console.log(`Badge ${index} clicked`);
                     updateWeatherInfo(dayTimeData[index], nightTimeData[index]);
                 });
             } else {
@@ -74,7 +74,6 @@ function updateForecastInfo(data) {
                 </div>
             `);
                 $(`#badge-${index}`).on("click", function () {
-                    console.log(`Badge ${index} clicked`);
                     updateWeatherInfo(dayTimeData[index], nightTimeData[index]);
                 });
             }
@@ -84,17 +83,20 @@ function updateForecastInfo(data) {
     }
 }
 
+// Information displayed when a badge is clicked
 function updateWeatherInfo(day, night) {
     if (day && night) {
         $("#weather").html(
             `
             <div id="dayTime">
             <p id="dayName">${day.forecast}</p>
+            <img src="${day.icon}" id="icon" width=86px height=86px/>
             <p id="temp">${day.temperature} ${day.temperatureUnit}</p>
             <p id="details">${day.detailedForecast}</p>
             </div>
             <div id="nightTime">
             <p id="dayName">${night.forecast}</p>
+            <img src="${night.icon}" id="icon" width=86px height=86px/>
             <p id="temp">${night.temperature} ${night.temperatureUnit}</p>
             <p id="details">${night.detailedForecast}</p>
             </div>
@@ -105,6 +107,7 @@ function updateWeatherInfo(day, night) {
             `
             <div id="dayTime">
             <p id="dayName">${day.forecast}</p>
+            <img src="${day.icon}" id="icon" width=86px height=86px/>
             <p id="temp">${day.temperature} ${day.temperatureUnit}</p>
             <p id="details">${day.detailedForecast}</p>
             </div>
