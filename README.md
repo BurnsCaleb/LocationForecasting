@@ -29,7 +29,7 @@
 </div>
 
 <div>
-  <img src="Images/landscape.png" width=800>
-  <img src="Images/portrait.png" width=400>
+  <img src="Images/DesktopView.png" width=800>
+  <img src="Images/MobileView.png" width=400>
 </div>
 
