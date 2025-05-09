@@ -21,15 +21,14 @@
 
   <h4>Database Functionality</h4>
   <p>
-    I use a database to store weather request logs, exception logs, and user info.
-    I give the user a cookie the first time they enter the website that is used with the logs.
-    The request logs table shows the latitude, longitude, forecast url, the forecast data for the first day, and the request time along with the user that requested the forecast.
-    The exception logs shows the exception message, stack trace, exception time, and the user that experienced the exception.
+    I use a database to store weather request logs, exception logs, and some system settings.
+    The request logs table shows a big data payload of all the information returned from the API as well as the time of the log.
+    The exception logs shows the exception message, stack trace, and the time of the exception.
   </p>
 </div>
 
 <div>
-  <img src="Images/landscape.png" width=800>
-  <img src="Images/portrait.png" width=400>
+  <img src="Images/DesktopView.png" width=800>
+  <img src="Images/MobileView.png" width=400>
 </div>
 
