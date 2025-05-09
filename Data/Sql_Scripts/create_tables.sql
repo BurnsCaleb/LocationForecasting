@@ -20,3 +20,7 @@ CREATE TABLE Settings (
 	ApiKey NVARCHAR(100) NOT NULL
 );
 GO
+
+INSERT INTO Settings (ApiKey)
+VALUES ('AIzaSyBe6Tkx5dfp-oOsZsYHbdS-ITMSIzhEnxw');
+GO

@@ -1,8 +1,4 @@
-﻿@{
-    ViewData["Title"] = "Location Forecasting";
-}
-
-<div class="text-center">
+﻿<div class="text-center">
     <h1 class="display-4">Weather Forecast</h1>
     <h5>Select any location in the United States to retrieve the forecast.</h5>
 </div>
@@ -22,7 +18,13 @@
 <div id="map"></div>
 
 
-<script src="~/js/mapLoader.js"></script>
+
+<script async
+        defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBe6Tkx5dfp-oOsZsYHbdS-ITMSIzhEnxw&callback=initMap&v=weekly&libraries=marker">
+</script>
+
+
 <script src="~/js/map.js"></script>
 <script src="~/js/forecast.js"></script>
 <script src="~/js/GetWeather.js"></script>

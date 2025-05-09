@@ -13,7 +13,6 @@
     <None Include="wwwroot\js\GetLocation.js" />
     <None Include="wwwroot\js\GetWeather.js" />
     <None Include="wwwroot\js\map.js" />
-    <None Include="wwwroot\js\mapLoader.js" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css" />

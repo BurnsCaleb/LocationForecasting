@@ -30,13 +30,6 @@ namespace LocationForecasting.Controllers
             return View();
         }
 
-        // Default Error Fallback
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-
 
         // API Requests
 
@@ -97,6 +90,7 @@ namespace LocationForecasting.Controllers
             {
                 // Get ApiKey from Database
                 string apiKey = _settingsData.GetApiKey();
+                Console.WriteLine(apiKey);
 
                 // Call LocationService.GetLocation to get City and State
                 LocationService.LocationData location = await _locationService.GetLocation(coords.Latitude, coords.Longitude, apiKey);
